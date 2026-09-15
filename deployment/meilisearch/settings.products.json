@@ -1,0 +1,60 @@
+{
+  "searchableAttributes": [
+    "title",
+    "brand",
+    "tags",
+    "category",
+    "description",
+    "attributes"
+  ],
+  "filterableAttributes": [
+    "category",
+    "category_path",
+    "brand",
+    "price",
+    "discount_price",
+    "rating_avg",
+    "in_stock",
+    "is_active",
+    "attributes.ram_gb",
+    "attributes.cpu",
+    "attributes.gpu"
+  ],
+  "sortableAttributes": [
+    "price",
+    "discount_price",
+    "rating_avg",
+    "popularity",
+    "created_at"
+  ],
+  "rankingRules": [
+    "words",
+    "typo",
+    "proximity",
+    "attribute",
+    "sort",
+    "exactness",
+    "popularity:desc"
+  ],
+  "typoTolerance": {
+    "enabled": true,
+    "minWordSizeForTypos": { "oneTypo": 4, "twoTypos": 8 }
+  },
+  "synonyms": {
+    "laptop": ["notebook"],
+    "notebook": ["laptop"],
+    "tv": ["television"],
+    "television": ["tv"],
+    "phone": ["mobile", "cellphone", "smartphone"],
+    "headphone": ["headphones", "earphone", "earphones"]
+  },
+  "stopWords": ["the", "a", "an", "for", "with", "and", "of"],
+  "faceting": { "maxValuesPerFacet": 100 },
+  "pagination": { "maxTotalHits": 2000 },
+  "embedders": {
+    "default": {
+      "source": "userProvided",
+      "dimensions": 384
+    }
+  }
+}

@@ -1,0 +1,28 @@
+# Git line-ending and diff handling rules
+* text=auto eol=lf
+
+# Always LF — break if CRLF sneaks in
+*.sh            text eol=lf
+*.py            text eol=lf
+*.ts            text eol=lf
+*.tsx           text eol=lf
+*.js            text eol=lf
+*.mjs           text eol=lf
+*.json          text eol=lf
+*.yaml          text eol=lf
+*.yml           text eol=lf
+*.css           text eol=lf
+*.md            text eol=lf
+Dockerfile      text eol=lf
+*.Dockerfile    text eol=lf
+pnpm-lock.yaml  text eol=lf -diff
+
+# Windows scripts keep CRLF
+*.ps1           text eol=crlf
+*.bat           text eol=crlf
+
+# Binary
+*.png           binary
+*.jpg           binary
+*.ico           binary
+*.drawio        binary

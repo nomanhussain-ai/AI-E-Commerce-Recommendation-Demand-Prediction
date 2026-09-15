@@ -1,0 +1,13 @@
+**/node_modules
+**/.venv
+**/.next
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+**/*.egg-info
+.git
+data/raw
+data/processed
+docs/screenshots
+*.log

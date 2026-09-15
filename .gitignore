@@ -1,0 +1,52 @@
+# ── Node / Next.js ──────────────────────────────────────────
+node_modules/
+.pnpm-store/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.python-version
+
+# ── Env / secrets ───────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+!**/.env.example
+
+# ── Data (large, git-ignored per data/README.md) ────────────
+data/raw/**
+!data/raw/**/.gitkeep
+!data/raw/**/SOURCE.md
+data/processed/**
+!data/processed/**/.gitkeep
+
+# ── Build / coverage / logs ─────────────────────────────────
+dist/
+build/
+coverage/
+.coverage
+htmlcov/
+*.log
+logs/
+
+# ── ML artifacts ────────────────────────────────────────────
+services/ml-service/app/models/**/*.joblib
+services/ml-service/app/models/**/*.pkl
+*.onnx
+
+# ── Editor / OS ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+*.swp

@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app"]
+
+[project]
+name = "core-api"
+version = "0.1.0"
+description = "Business API for the AI-powered e-commerce platform (auth, catalog, cart, orders, analytics)"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "sqlmodel>=0.0.22",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30",
+    "aiosqlite>=0.20",
+    "alembic>=1.14",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.6",
+    "structlog>=24.4",
+    "python-json-logger>=2.0",
+    "argon2-cffi>=23.1",
+    "pyjwt>=2.10",
+    "redis>=5.2",
+    "httpx>=0.28",
+    "python-ulid>=3.0",
+    "email-validator>=2.2",
+    "cloudinary>=1.44",
+    "python-multipart>=0.0.20",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "asgi-lifespan>=2.1",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "httpx>=0.28",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM"]
+# B008: FastAPI's `Depends()` / `Query()` in defaults is the intended pattern.
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"migrations/*" = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["pydantic.mypy"]
+strict = true
+ignore_missing_imports = true

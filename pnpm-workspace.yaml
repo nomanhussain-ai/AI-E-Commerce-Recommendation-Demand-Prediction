@@ -1,0 +1,8 @@
+packages:
+  - "frontend/web"
+  - "packages/*"
+
+# pnpm build-script allowlist (created by create-next-app under web/, hoisted here)
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
